@@ -1,0 +1,242 @@
+//// -- LEVEL 1
+//// -- Tables and References
+Table acao { //funcoes do sistema, classificar/aprovar/etc
+  id int [pk, increment]
+  nome  varchar(100)
+  descricao varchar(1000)
+}
+
+Table aprovacao_modelo {
+  id int [pk, increment]
+  nome varchar(100)
+  descricao varchar(1000)
+}
+
+Table classificacao { // Urgente/
+  id int [pk, increment]
+  nome varchar(100)
+  descricao varchar(1000)
+  tipo_tarefa int [ref: > tarefa_tipo.id]
+}
+
+Table tarefa_tipo { // Erro/melhoria/projeto
+  id int [pk, increment]
+  nome varchar(100)
+  descricao varchar(1000)
+}
+
+Table pasta {
+  id int [pk, increment]
+  tipo int
+  projeto_id int [ref: > projeto.id]
+  nome varchar
+  descricao varchar(1000)
+}
+
+Table pasta_pasta {
+  id int [pk, increment]
+  pai_id int [ref: > pasta.id]
+  filha_id int [ref: > pasta.id]
+}
+
+Table pasta_tarefa {
+  id int [pk, increment]
+  pasta_id int [ref: > pasta.id]
+  tarefa_id int [ref: > tarefa.id]
+}
+
+Table projeto {
+  id int [pk, increment]
+  nome varchar(100)
+  descricao varchar
+  tipo int  [ref: > projeto_tipo.id]
+}
+
+Table projeto_tarefas { //Validar
+  id int [pk, increment]
+  projeto_id int //[ref: > projeto.id]
+  tarefa_id int //[ref: > tarefa.id]
+}
+
+Table projeto_tipo { 
+  id int [pk, increment]
+  nome varchar(100)
+  descricao varchar(1000)
+}
+
+Table solicitacao_modelo { //pre-cadastro/modelo de tarefa
+  id int [pk, increment]
+  modelo_id int
+  nome varchar(100)
+  descricao varchar(1000)
+}
+
+Table tarefa {
+  id int [pk, increment]
+  tarefa_id int [ref: > tarefa.id]
+  tipo int
+  classificacao int
+  status int [ref: > tarefa_status.id]
+  conteudo varchar(5000)
+}
+
+Table tarefa_aprovacao { //Item da tarefa
+  id int [pk, increment]
+  tarefa_id int [ref: > tarefa.id]
+  modelo_id int
+  nome varchar(100)
+  descricao varchar(1000)
+}
+
+Table tarefa_aprovacao_usuario {
+  id int [pk, increment]
+  aprovacao_id int [ref: > usuario.id]
+  usuario_id int
+  aprovado int
+  obrigatorio int
+  observacao varchar(1000)
+}
+
+Table tarefa_cronograma { //Previsões de Trabalho
+  id int [pk, increment]
+  tarefa_id int [ref: > tarefa.id]
+  usuario_id int
+  inicio datetime
+  fim datetime
+  anterior_id int
+  proximo_id int
+}
+
+Table tarefa_etapa { //Atendendo/Aguardando
+  id int [pk, increment]
+  tarefa_id int [ref: > tarefa.id]
+  tipo int [ref: > tarefa_etapa_tipo.id]
+  status int [ref: > tarefa_etapa_status.id]
+}
+  
+Table tarefa_etapa_historico_tempo { //7:00 à 11:30; 13:00 à 18:00
+  id int [pk, increment]
+  tarefa_id int [ref: > tarefa.id]
+  etapa_id int
+  inicio datetime
+  fim datetime
+}
+
+Table tarefa_etapa_status { //Genérica
+  id int [pk, increment]
+  nome varchar(100)
+  descricao varchar(1000)
+  ativo int
+}
+
+Table tarefa_etapa_tipo { //Genérica
+  id int [pk, increment]
+  nome varchar(100)
+  descricao varchar(1000)
+  ativo int
+}
+
+Table tarefa_status {
+  id int [pk, increment]
+  nome varchar(100)
+  descricao varchar(1000)
+}
+
+Table tarefa_usuario {
+  id int [pk, increment]
+  tarefa_id int [ref: > tarefa.id]
+  usuario_id int [ref: > usuario.id]
+  funcao int [ref: > usuario_funcao.id]
+}
+
+Table usuario {
+  id int [pk]
+  nome varchar(100)
+  perfil int
+  login varchar
+  senha varchar
+  tipo int [ref: > usuario_tipo.id]
+}
+
+Table usuario_tipo { //Generica
+  id int [pk]
+  nome varchar(100)
+  descricao varchar(1000)
+}
+
+Table usuario_funcao { //Generica
+  id int [pk]
+  nome varchar(100)
+  descricao varchar(1000)
+}
+
+// //----------------------------------------------//
+
+// //// -- LEVEL 2
+// //// -- Adding column settings
+
+// Table order_items {
+//   order_id int [ref: > orders.id] // inline relationship (many-to-one)
+//   product_id int
+//   quantity int [default: 1] // default value
+// }
+
+// Ref: order_items.product_id > products.id
+
+// Table orders {
+
+// //----------------------------------------------//
+
+//   id int [pk] // primary key
+//   user_id int [not null, unique]
+//   status varchar
+//   created_at varchar [note: 'When order created'] // add column note
+// }
+// //// -- Level 3 
+// //// -- Enum, Indexes
+
+// // Enum for 'products' table below
+// Enum products_status {
+//   out_of_stock
+//   in_stock
+//   running_low [note: 'less than 20'] // add column note
+// }
+
+// // Indexes: You can define a single or multi-column index 
+// Table products {
+//   id int [pk]
+//   name varchar
+//   merchant_id int [not null]
+//   price int
+//   status products_status
+//   created_at datetime [default: `now()`]
+  
+//   Indexes {
+//     (merchant_id, status) [name:'product_status']
+//     id [unique]
+//   }
+// }
+
+// Table merchants {
+//   id int
+//   country_code int
+//   merchant_name varchar
+  
+//   "created at" varchar
+//   admin_id int [ref: > U.id]
+//   Indexes {
+//     (id, country_code) [pk]
+//   }
+// }
+
+// Table merchant_periods {
+//   id int [pk]
+//   merchant_id int
+//   country_code int
+//   start_date datetime
+//   end_date datetime
+// }
+
+// Ref: products.merchant_id > merchants.id // many-to-one
+// //composite foreign key
+// Ref: merchant_periods.(merchant_id, country_code) > merchants.(id, country_code)
