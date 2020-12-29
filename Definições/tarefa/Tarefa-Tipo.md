@@ -1,4 +1,4 @@
-# **Tipos de Tarefas**
+# Tipos de Tarefas
 
 *Tipos de tarefas serão utilizados para categorizar e organizar as tarefas.*
 

@@ -7,39 +7,23 @@
 - **Tipo**: Define o tipo de Mapa.
 - **Nome**: Descrição curta sobre o Mapa.
 - **Descrição**: Descrição detalhada sobre o Mapa.
-- **Fases**: Fases do Mapa. [*Ir para*](Mapa - Fases.md)
-- **Equipes**: Equipes relacionadas ao mapa.
-  - Apenas equipes relacionadas aos projetos relacionados ao mapa.
-- **Items**: Projetos relacionados ao Mapa. (Tarefas de um Projeto, Projetos, ou tarefas soltas)
+- **Projetos**: Projetos relacionados ao Mapa.
+- **Tarefas**: Tarefas relacionadas ao Mapa.
+- **Fases**: Fases do Mapa. [*Ir para*](./Mapa-Fases.md)
+- **Equipes**: Equipes relacionadas ao mapa. [*Ir para*](./Mapa-Equipes.md)
+- **Categorias**: (A definir)
 
 #### Tipos (Fixos)
 
-- **Tarefas**: Para gerenciar tarefas de um projeto
+- **Tarefas**: Para gerenciar tarefas de um projeto.
 - **Projetos**: Para gerenciar projetos
 
-#### Objetos
+##### Regras dos Tipos
 
-- Projeto - Projetos relacionados ao Mapa
-- Cronograma - Fases do Mapa
-- Equipe - Equipes de usuários que fazem parte do mapa
-- Tarefas
-- Categorias - Categorias para organizar as tarefas/projetos do mapa de acordo com a prioridade
+|               | Tarefas          | Projetos       |
+| ------------- | ---------------- | -------------- |
+| Visão do Mapa | Filho do Projeto | Pai do Projeto |
+| Projetos      | Apenas 1         | Vários         |
+| Tarefas       | Várias*          | Nenhuma        |
 
-
-
-#### Definições dos Tipos
-
-- Pode
-  - Incluir várias categorias
-  - Incluir várias Equipes
-- Não Pode
-  - Relacionar tarefas que estão fora do projeto
-
-
-
-#### Definições do Objetos
-
-- Projeto
-  - Projeto que está relacionado ao Mapa, seja como *Pai* ou *Filho*
-- Cronograma
-  - 
+*Apenas tarefas que estão relacionadas ao projeto

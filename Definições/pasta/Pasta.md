@@ -1,4 +1,4 @@
-# **Pastas**
+# Pastas
 
 *Pastas são utilizadas para organizar e/ou classificar tarefas ou projetos.*
 

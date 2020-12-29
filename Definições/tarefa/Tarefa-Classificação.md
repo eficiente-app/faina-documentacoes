@@ -1,4 +1,4 @@
-# **Classificação de Tarefas**
+# Classificação de Tarefas
 
 *As classificações são indicadas para definir a urgência de uma tarefa, mas podem ser utilizadas para classificar as tarefas da forma que desejar.*
 

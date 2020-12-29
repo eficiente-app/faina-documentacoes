@@ -1,4 +1,4 @@
-# **Etapas**
+# Etapas de Tarefas
 
 *Etapas são utilizadas para detalhar a execução da tarefa, são o que de fato aconteceu durante todo o processo.*
 

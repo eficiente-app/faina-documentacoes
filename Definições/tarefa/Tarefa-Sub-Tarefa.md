@@ -1,6 +1,6 @@
-# **Tipos de Projeto**
+# Sub-Tarefa
 
-*Tipos de projetos são utilizados para categorizar e organizar os projetos.*
+*São processos menores de uma tarefa maior, utilizadas para separar e organizar partes da tarefa original.*
 
 #### Atributos
 
@@ -13,3 +13,5 @@
 - **Não Pode**
 
 **Indicações/Casos de uso**
+
+- ***

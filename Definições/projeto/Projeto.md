@@ -1,4 +1,4 @@
-# **Projetos**
+# Projetos
 
 *Projetos são utilizadas para agrupar tarefas que fazem parte de um mesmo objetivo maior, a curto ou longo prazo.*
 
@@ -11,7 +11,7 @@
 
 #### Atributos
 
-- **Tipo**: Define o tipo de projeto. [*Ir para*.](Projeto - Tipo.md)
+- **Tipo**: Define o tipo de projeto. [*Ir para*.](./Projeto-Tipo.md)
 - **Nome**: Descrição curta do projeto.
 - **Inicio**: Data de Inicio da execução do projeto.
 - **Fim**: Data de Fim da execução do projeto.
@@ -27,3 +27,10 @@
 
 Indicações/Casos de uso
 
+
+
+À definir?
+
+- Como controlar o progresso? (Wrike tem várias opções)
+  - Tarefas concluídas
+  - Data de Inicio e Fim

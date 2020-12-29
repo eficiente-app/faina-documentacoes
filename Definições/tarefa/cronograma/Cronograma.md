@@ -22,7 +22,7 @@ Em ordem cronológica, eles são o Futuro, de forma que as Etapas se tornam Pres
 
 **Tipos** (Fixos do Sistema)
 
-* **Tarefa**: Define o período prevista da execução de uma tarefa.
+* **Tarefa**: Define o período prevista da execução de uma tarefa. Ideal para tarefas que serão executadas por mais de um usuário.
   * Não pode sobrepor o período de outro cronograma na mesma tarefa.
 * **Usuário**: Define o período prevista da execução de uma tarefa para o usuário. 
   * Deve estar dentro do período de execução da tarefa.
