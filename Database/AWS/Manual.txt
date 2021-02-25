@@ -1,0 +1,13 @@
+Abrir Putty
+Carregar arquivo Faina-KP.ppk
+Login as: ubuntu
+cd git/faina-api
+git pull origin develop
+yarn build
+pm2 restart faina-web
+
+*Trocar Branches
+git fetch origin develop
+git switch develop
+*Listar Branches
+git branch
