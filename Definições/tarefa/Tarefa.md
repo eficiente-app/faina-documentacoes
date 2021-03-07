@@ -8,6 +8,8 @@
 
 - **Classificação**: Atribui a classificação adequada para esta tarefa. [*Ir para.*](Tarefa-Classificação.md)
 
+- **Status**: Status da Tarefa
+
 - **Cronograma**: Define um período estimado para a execução da tarefa ou parte dela. [*Ir Para*](./cronograma/cronograma.md)
 
 - **Etapas**: Detalham a execução da tarefa, detalhando o tempo real de execução. [*Ir Para*](./etapa/etapa.md)
@@ -19,6 +21,8 @@
 - **Descrição**: Detalhada o que será feito na execução da tarefa.
 
 - **Posição**: Posição da Tarefa na lista de tarefas da pasta onde ela está.
+
+  - Permitir alterar?
 
 - ###### Atributos Secundários
 

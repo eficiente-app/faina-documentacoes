@@ -5,7 +5,7 @@
 - Tipo de Pasta Utilizada para agrupar e organizar tarefas.
 - Pode conter sub-pastas
 - *Por ser uma pasta, também está restrito as regras das pastas.*
-- **Como contabilizar?**
+- **Como contabilizar percentual/progresso?**
 
 
 
@@ -34,3 +34,8 @@ Indicações/Casos de uso
 - Como controlar o progresso? (Wrike tem várias opções)
   - Tarefas concluídas
   - Data de Inicio e Fim
+  - Observações
+    - Planning Poker
+    - Tipos pouco utilizados
+      - Qtd
+      - Datas
