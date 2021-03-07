@@ -13,5 +13,3 @@
 - **Não Pode**
 
 **Indicações/Casos de uso**
-
-- ***
